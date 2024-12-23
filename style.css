@@ -9,14 +9,13 @@
 
 h1{
     color: rgb(228, 62, 50);
-    font-size: 80px;
+    font-size: 6vw; /* Responsive font size */
 }
 
 body{
     background-image: url(images/backimage.jpg);
     background-size: cover;
     text-align: center;
-
 }
 
 .container{
@@ -24,6 +23,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
 .game{
@@ -46,35 +46,88 @@ body{
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
     font-size: 8vmin;
     color: rgb(176, 19, 8);
-    
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures content is centered */
 }
 
-.resBtn{
+.resBtn, .newBtn{
     padding: 0.5rem;
     font-size: 1.10rem;
     font-weight: bold;
     border-radius: 1rem;
     border: none;
     background-color: rgb(228, 62, 50);
-
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.newBtn{
-    padding: 0.5rem;
-    font-size: 1.10rem;
-    font-weight: bold;
-    border-radius: 1rem;
-    border: none;
-    background-color: rgb(228, 62, 50);
-
+.resBtn:hover, .newBtn:hover {
+    background-color: rgb(200, 50, 40); /* Add hover effect */
 }
 
 .msg{
-    font-size: 7vmin;
+    font-size: 5vw; /* Responsive font size */
     font-weight: bold;
-    color:white;
+    color: white;
+    margin-top: 1rem;
 }
 
 .hide{
     display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game {
+        height: 75vmin;
+        width: 75vmin;
+        gap: 2vmin;
+    }
+
+    .box {
+        height: 20vmin;
+        width: 20vmin;
+        font-size: 6vmin;
+    }
+
+    .container {
+        height: auto;
+    }
+
+    h1 {
+        font-size: 10vw;
+    }
+
+    .msg {
+        font-size: 7vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .game {
+        height: 90vmin;
+        width: 90vmin;
+        gap: 3vmin;
+    }
+
+    .box {
+        height: 25vmin;
+        width: 25vmin;
+        font-size: 5vmin;
+    }
+
+    .resBtn, .newBtn {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    h1 {
+        font-size: 12vw;
+    }
+
+    .msg {
+        font-size: 6vw;
+    }
 }
